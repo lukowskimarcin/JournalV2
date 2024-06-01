@@ -6,6 +6,7 @@
 	<modules>
 		<module>backend/common</module>
 		<module>backend/account-service</module>
+		<module>backend/provider-service</module>
 	</modules>
 
 	<parent>
@@ -77,7 +78,17 @@
 				<version>${project.version}</version>
 			</dependency>
 
-
+			<dependency>
+				<groupId>com.journal</groupId>
+				<artifactId>provider-common</artifactId>				
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.journal</groupId>
+				<artifactId>provider-core</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+ 
 
 		</dependencies>
 	</dependencyManagement>
@@ -98,3 +109,4 @@
 	 
  
 </project>
+

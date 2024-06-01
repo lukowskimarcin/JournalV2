@@ -7,7 +7,7 @@ logging:
 
 spring:
   application:
-    name: account-core
+    name: account-service
 
   data:
     mongodb:
