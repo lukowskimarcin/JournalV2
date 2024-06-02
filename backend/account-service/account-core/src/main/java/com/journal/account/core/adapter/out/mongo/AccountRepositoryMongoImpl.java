@@ -1,9 +1,7 @@
-package com.journal.account.core.adapter.out;
+package com.journal.account.core.adapter.out.mongo;
 
 import org.springframework.stereotype.Service;
 
-import com.journal.account.core.adapter.out.mongo.AccountMongoMapper;
-import com.journal.account.core.adapter.out.mongo.AccountMongoRepository;
 import com.journal.account.core.application.port.out.AccountRepository;
 import com.journal.account.core.domain.aggregate.Account;
 
@@ -17,8 +15,7 @@ public class AccountRepositoryMongoImpl implements AccountRepository {
 
     @Override
     public Account save(Account account) {
-        var mongoEntity = AccountMongoMapper.toMongoEntity(account);
-         mongoEntity = accountMongoRepository.save(mongoEntity);
+        var mongoEntity = accountMongoRepository.save(AccountMongoMapper.toMongoEntity(account));
         return AccountMongoMapper.toDomainEntity(mongoEntity);
     }
 

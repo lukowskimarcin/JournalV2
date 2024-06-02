@@ -1,4 +1,4 @@
-package com.journal.account.core.application.services;
+package com.journal.account.core.application.service;
 
 import org.springframework.stereotype.Service;
 

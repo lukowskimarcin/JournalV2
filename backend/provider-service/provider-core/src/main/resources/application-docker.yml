@@ -1,0 +1,16 @@
+server:
+  port: 8086
+
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%X{traceId:-},%X{spanId:-}] ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+
+spring:
+  application:
+    name: provider-service
+
+  data:
+    mongodb:
+      host: mongodb
+      port: 27017
+      database: journal_db
