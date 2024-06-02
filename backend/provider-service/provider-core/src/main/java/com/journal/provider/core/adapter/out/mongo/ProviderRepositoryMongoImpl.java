@@ -5,7 +5,9 @@ import com.journal.provider.core.domain.Provider;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -23,5 +25,17 @@ public class ProviderRepositoryMongoImpl implements ProviderRepository {
     public Optional<Provider> findByLoginAndServer(String login, String server) {
         var mongoEntity = providerMongoRepository.findByLoginAndServer(login, server);
         return mongoEntity.map(ProviderMongoMapper::toDomainEntity);
+    }
+
+    @Override
+    public Optional<Provider> findById(String id) {
+        var mongoEntity = providerMongoRepository.findById(id);
+        return mongoEntity.map(ProviderMongoMapper::toDomainEntity);
+    }
+
+    @Override
+    public List<Provider> findAll() {
+        var mongoEntities = providerMongoRepository.findAll();
+        return mongoEntities.stream().map(ProviderMongoMapper::toDomainEntity).collect(Collectors.toList());
     }
 }

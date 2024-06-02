@@ -8,10 +8,8 @@ import lombok.Data;
 @AllArgsConstructor
 @Builder
 public class SafeProvider {
-    private Long id;
+    private String id;
     private String login;
     private String url;
-    private String name;
     private String server;
-    private Boolean active;
 }
