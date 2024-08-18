@@ -37,7 +37,7 @@ public class ProviderController {
         var provider = findProviderUseCase.findById(id);
         return new ResponseEntity<>(
                 provider.map(ProviderDtoMapper::fromDomain)
-                        .orElseThrow(() -> new ProviderNotFoundException("Provider with id: " + id + " not found")),
+                        .orElseThrow(() -> new ProviderNotFoundException(id)),
                 HttpStatus.OK);
     }
 
